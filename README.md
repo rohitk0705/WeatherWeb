@@ -13,7 +13,8 @@ A simple and interactive web app to get real-time weather information for any lo
 
 ## Demo
 
-![Weather App Screenshot](screenshot.png)
+![Weather App Screenshot](![image](https://github.com/user-attachments/assets/5770e770-4ffd-4257-921b-1fd5a9632aba)
+)
 
 ## How to Use
 
