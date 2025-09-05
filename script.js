@@ -7,7 +7,7 @@ async function getWeather() {
   const userInput = document.getElementById("locationInput").value.trim();
   const location = userInput || "Mumbai"; // default fallback
 
-  const apiKey = "600a1b8e1a8e48889e252514252606";//api key
+  const apiKey = "600a1b8e1a8e48889e252514252606";
   const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=yes`;
 
   try {
@@ -94,4 +94,3 @@ document.getElementById("locationInput").addEventListener("keydown", function (e
 
 // Initial call to set default location
 getWeather();
-
