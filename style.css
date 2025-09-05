@@ -3,36 +3,44 @@ body {
   background: linear-gradient(120deg, #83a4d4, #b6fbff 80%);
   display: flex;
   justify-content: center;
-  align-items: flex-start;  /* changed from center to top-align */
+  align-items: flex-start;
   min-height: 100vh;
-  overflow-y: auto;
   margin: 0;
-  padding: 2rem 0; /* add some space at top and bottom */
+  padding: 1.5rem 1rem;
 }
-
 
 .container {
   background-color: #fff;
-  padding: 2.5rem 2rem;
+  padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
   text-align: center;
+  width: 100%;
+  max-width: 700px;
   animation: popIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
 }
 
 @keyframes popIn {
-  0% { transform: scale(0.8) translateY(40px); opacity: 0; }
+  0% { transform: scale(0.9) translateY(40px); opacity: 0; }
   100% { transform: scale(1) translateY(0); opacity: 1; }
 }
 
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 1rem 0;
+}
+
 input {
+  flex: 1;
   padding: 10px;
   font-size: 16px;
-  margin-right: 10px;
   border: 2px solid #83a4d4;
   border-radius: 6px;
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
+  min-width: 180px;
 }
 
 input:focus {
@@ -49,13 +57,11 @@ button {
   border: none;
   border-radius: 6px;
   transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(74,144,226,0.10);
 }
 
 button:hover {
   background: linear-gradient(90deg, #00c6fb, #4a90e2);
   transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 4px 16px #4a90e2aa;
 }
 
 button:active {
@@ -64,68 +70,19 @@ button:active {
 
 #weatherResult {
   margin-top: 24px;
-  font-size: 18px;
+  font-size: 17px;
   min-height: 60px;
-  transition: min-height 0.3s;
 }
 
-.weather-icon {
-  width: 54px;
-  height: 54px;
+/* Map */
+#map {
+  height: 400px;
+  border-radius: 10px;
   margin-top: 10px;
-  display: inline-block;
-  animation: iconPop 0.5s;
-}
-
-@keyframes iconPop {
-  0% { transform: scale(0.7); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-.weather-icon img {
   width: 100%;
-  height: 100%;
 }
 
-#weatherResult p {
-  margin: 7px 0;
-  transition: color 0.2s;
-}
-
-#weatherResult p strong {
-  color: #4a90e2;
-}
-
-#weatherResult p span {
-  color: #555;
-}
-
-#weatherResult p img {
-  vertical-align: middle;
-  margin-left: 10px;
-}
-
-#weatherResult p img.weather-icon {
-  width: 34px;
-  height: 34px;
-  transition: transform 0.2s;
-}
-
-#weatherResult p img.weather-icon:hover {
-  transform: scale(1.15) rotate(-8deg);
-  box-shadow: 0 2px 8px #4a90e2aa;
-}
-
-#weatherResult p img.weather-icon:active {
-  transform: scale(0.9);
-}
-
-#weatherResult p img.weather-icon:focus {
-  outline: none;
-  box-shadow: 0 0 5px #4a90e2;
-}
-
-/* Loading spinner (for JS use) */
+/* Spinner */
 .spinner {
   border: 4px solid #e3e3e3;
   border-top: 4px solid #4a90e2;
@@ -139,4 +96,24 @@ button:active {
 @keyframes spin {
   0% { transform: rotate(0deg);}
   100% { transform: rotate(360deg);}
+}
+
+/* Hide section by default */
+.hidden {
+  display: none;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+}
+body.dark-mode .container {
+  background: #1e1e1e;
+}
+body.dark-mode input, 
+body.dark-mode button {
+  background: #222;
+  color: #f1f1f1;
+  border: 1px solid #555;
 }
