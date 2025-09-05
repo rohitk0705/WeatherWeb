@@ -10,7 +10,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 async function getWeather() {
   const location = document.getElementById("locationInput").value.trim() || "Mumbai";
   const apiKey = "8808c369e784420a90061355250509";
-  const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=yes`;
+  const url = `${proxy}https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=yes`;
 
   try {
     const response = await fetch(url);
@@ -75,4 +75,5 @@ document.getElementById("locationInput").addEventListener("keydown", (e) => {
 
 // Initial load
 getWeather();
+
 
