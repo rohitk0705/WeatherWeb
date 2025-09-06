@@ -4,47 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Weather App</title>
-  
-  <!-- Leaflet Map CSS -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha512-sA+qw5Zp2jcOZ1pZ78t+bR0pWvRyQXqvM7cI4zZhvG0zZrRnlPSK1tY9FdAkosdZ3ZkY1jP3e2F6VpKjcT1rQA=="
-    crossorigin=""
-  />
-  
+
+
+<!-- Leaflet CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w=="
+  crossorigin=""
+/>
+
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>🌤️ Weather App</h1>
-    <button id="theme-toggle">🌙 Dark Mode</button>
-    
-    <!-- Search input group -->
-    <div class="search-bar">
+    <button id="theme-toggle" aria-pressed="false">🌙 Dark Mode</button>
+
+    <!-- semantic form for search -->
+    <form id="searchForm" class="search-bar" autocomplete="off">
+      <label for="locationInput" class="sr-only">Location</label>
       <input type="text" id="locationInput" placeholder="Enter location (e.g. Mumbai)" />
-      <button id="searchBtn">Get Weather</button>
+
+      <label for="apikey" class="sr-only">Weather API Key</label>
+      <input type="text" id="apikey" placeholder="Please enter your WeatherAPI key" />
+
+      <button type="submit" id="searchBtn">Get Weather</button>
       <button id="clearBtn" type="button">Clear</button>
-    </div>
-    
+    </form>
+
+    <!-- spinner (optional, shown while fetching) -->
+    <div id="spinner" class="spinner" role="status" aria-hidden="true" aria-label="Loading"></div>
+
     <!-- Weather Section (hidden initially) -->
-    <div id="weatherSection" class="hidden">
+    <div id="weatherSection" class="hidden" aria-live="polite">
       <div id="weatherResult"></div>
 
       <h2>📍 Map of Location</h2>
-      <div id="map"></div>
+      <div id="map" aria-hidden="false"></div>
     </div>
   </div>
 
-  <!-- Leaflet JS -->
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha512-vn0w20nFQ4i7FQ6PwpKT5CtK5Cuv5gH4H7kO4LEj0W8Jh2TYcMwaM9zSkU9jU9FqOt5hJz3fj3LrSztO7nJ1Ag=="
-    crossorigin="">
-  </script>
+
+<!-- Leaflet JS -->
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg=="
+  crossorigin="">
+</script>
 
   <!-- Custom JS -->
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
+
+
