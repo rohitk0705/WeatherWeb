@@ -5,29 +5,32 @@ A simple and interactive web app to get real-time weather information for any lo
 ## Features
 
 - Search weather by city or place name
-- Displays temperature, humidity, wind, UV index, air quality, and more
-- Shows the location on an interactive map (Leaflet + OpenStreetMap)
+- Display temperature, humidity, wind, UV index, air quality, and more
+- Show the location on an interactive map (Leaflet + OpenStreetMap)
 - Responsive and modern UI
-- Press **Enter** or click **Get Weather** to search
-- **Clear** button to reset the screen
+- Search with **Enter** key or by clicking **Get Weather**
+- Use the **Clear** button to reset the screen
+- Toggle between **Light/Dark mode**
 
 ## Demo
 
-![Weather App Screenshot]([image](https://github.com/user-attachments/assets/5770e770-4ffd-4257-921b-1fd5a9632aba)
-)
+![Weather App Screenshot](https://github.com/user-attachments/assets/5770e770-4ffd-4257-921b-1fd5a9632aba)
 
 ## How to Use
 
 1. **Clone or download** this repository.
 2. Open `index.html` in your browser.
-3. Enter a location (e.g., `Mumbai`) and press **Enter** or click **Get Weather**.
-4. View the weather details and map.
-5. Click **Clear** to reset and search again.
+3. Enter a location (e.g., `Mumbai`) and your WeatherAPI key.
+4. Press **Enter** or click **Get Weather** to fetch results.
+5. View the weather details and interactive map.
+6. Click **Clear** to reset and search again.
 
 ## Setup
 
 - No build tools required. Just open `index.html` in your browser.
-- Requires an internet connection for WeatherAPI and Leaflet map.
+- Requires:
+  - Internet connection for WeatherAPI and Leaflet map
+  - A free [WeatherAPI](https://www.weatherapi.com/) key (paste it into the API key input field)
 
 ## Files
 
@@ -37,8 +40,8 @@ A simple and interactive web app to get real-time weather information for any lo
 
 ## API
 
-- [WeatherAPI](https://www.weatherapi.com/) for weather data (free tier)
-- [Leaflet](https://leafletjs.com/) and [OpenStreetMap](https://www.openstreetmap.org/) for maps
+- [WeatherAPI](https://www.weatherapi.com/) for weather data
+- [Leaflet](https://leafletjs.com/) + [OpenStreetMap](https://www.openstreetmap.org/) for maps
 
 ## Credits
 
@@ -47,4 +50,4 @@ A simple and interactive web app to get real-time weather information for any lo
 
 ---
 
-**Enjoy your weather
+✨ **Enjoy your weather!**
