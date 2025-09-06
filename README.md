@@ -12,7 +12,7 @@ A simple and interactive web app to get real-time weather information for any lo
 - Use the **Clear** button to reset the screen
 - Toggle between **Light/Dark mode**
 
-## Demo
+## Screenshot
 
 ![Weather App Screenshot](https://github.com/user-attachments/assets/5770e770-4ffd-4257-921b-1fd5a9632aba)
 
